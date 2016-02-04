@@ -17,7 +17,7 @@ module.exports = function(app) {
     app.get('/forgot', function(req, res) {
 
         // render the page and pass in any flash data if it exists
-        res.render('forgot.ejs', { message: req.flash('info') }); 
+        res.render('forgot.ejs', { user : req.user, message: req.flash('info') }); 
     });
 	
     // =====================================
