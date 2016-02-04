@@ -1,9 +1,9 @@
 {
-  "name": "polland",
+  "name": "Header",
   "version": "1.0.0",
-  "description": "polling app with various logins",
+  "description": "Header boilerplate for apps with logins",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "async": "^1.5.2",
