@@ -1,4 +1,4 @@
-console.log("	APP/SOCIALMEDIA.JS")
+console.log("	APP/ACCT-MANAGE/SOCIALMEDIA.JS")
 
 // app/socialMedia.js
 module.exports = function(app, passport) {
