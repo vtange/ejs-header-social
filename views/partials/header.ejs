@@ -10,7 +10,9 @@
 								<a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
 								<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
 								<% } else {%>
-								<a href="/profile" class="btn btn-default"><span class="fa fa-user"></span> <%= user.local.username %></a>
+								<a href="/profile" class="btn btn-default">
+										<img style="max-height:30px;" src="<%= user.local.avatarURL %>" onError="this.onerror=null; this.src='../images/novatar.png'"/>
+										<%= user.local.username %></a>
 								<% } %>
 							</div>
 					    </div>
