@@ -1,7 +1,7 @@
 {
-  "name": "Header",
+  "name": "basic-login-bar",
   "version": "1.0.0",
-  "description": "Header boilerplate for apps with logins",
+  "description": "Basic Bar with Title and Login buttons, Social Media Login incl.",
   "scripts": {
     "start": "node server.js"
   },
