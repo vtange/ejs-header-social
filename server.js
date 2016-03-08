@@ -1,41 +1,22 @@
+module.exports = function(input_app,input_session,passport){
 // server.js
 // set up ======================================================================
 // get all the tools we need
+var app      = input_app;
+var session = input_session;
+
+// set up statics
 var express  = require('express');
-var app      = express();
-var flash    = require('connect-flash');
-
-var morgan       = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var methodOverride = require('method-override');
-var session      = require('express-session');
-// configuration ===============================================================
-
-var passport = require('passport');
-require('./config/passport')(passport); // pass passport for configuration
-
-// set up our express application
 app.use(express.static(__dirname + '/public'));     // set the static files location /public/img will be /img for users
-app.use(morgan('dev')); // log every request to the console
-app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser.urlencoded({ extended: false }))    // parse application/x-www-form-urlencoded
-app.use(bodyParser.json())    // parse application/json
-app.use(methodOverride());                  // simulate DELETE and PUT
 
-app.set('view engine', 'ejs'); // set up ejs for templating
 app.set('views', require('path').join(__dirname, 'views-bar'));
 
-// required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
+var flash    = require('connect-flash');
 app.use(flash()); // use connect-flash for flash messages stored in session
 
 // routes ======================================================================
 require('./app/acct-manage/loginLogout.js')(app, passport); // load basic login logout routes
 require('./app/acct-manage/socialMedia.js')(app, passport); // load social media linking
 require('./app/acct-manage/passForget.js')(app); // load password forgot functionality
-// launch ======================================================================
-
-module.exports = app;
+// no launch, this just connects stuff ======================================================================
+};
