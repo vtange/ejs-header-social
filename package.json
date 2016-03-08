@@ -7,6 +7,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "app-root-path": "^1.0.0",
     "async": "^1.5.2",
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.0.0",

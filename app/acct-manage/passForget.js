@@ -1,6 +1,7 @@
-console.log("	APP/ACCT-MANAGE/PASSFORGET.JS")
+console.log("	APP/ACCT-MANAGE/PASSFORGET.JS");
 
-var User            = require('../models/user');
+var appRoot 		= require('app-root-path');
+var User       		= require(appRoot +'/app/models/user');
 var flash    		= require('connect-flash');
 var asyncc 			= require('async');
 var crypto 			= require('crypto');
