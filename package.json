@@ -9,7 +9,6 @@
   "dependencies": {
     "app-root-path": "^1.0.0",
     "async": "^1.5.2",
-    "bcrypt-nodejs": "latest",
     "body-parser": "~1.0.0",
     "connect-flash": "~0.1.1",
     "cookie-parser": "~1.0.0",
@@ -17,7 +16,6 @@
     "express": "~4.0.0",
     "express-handlebars": "^2.0.1",
     "express-session": "~1.0.0",
-    "gravatar": "^1.4.0",
     "method-override": "~1.0.0",
     "mongoose": "~3.8.1",
     "morgan": "~1.0.0",
