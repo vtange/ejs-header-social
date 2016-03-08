@@ -15,7 +15,7 @@
   },
   "gitHead": "3225a5ca9f1afd566870f7b9bc46d0feab98f739",
   "readme": "ERROR: No README data found!",
-  "_id": "basic-login-bar@1.0.2",
-  "_shasum": "18d4108b31b7fdb59a8e3fe2501744eedba46b5f",
+  "_id": "basic-login-bar@1.0.3",
+  "_shasum": "6540c1589ac0b2ed38608cf404f1a7c56e01cb73",
   "_from": "basic-login-bar@>=1.0.0 <2.0.0"
 }

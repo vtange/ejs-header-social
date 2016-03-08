@@ -9,8 +9,6 @@ var session = input_session;
 var express  = require('express');
 app.use(express.static(__dirname + '/public'));     // set the static files location /public/img will be /img for users
 
-app.set('views', require('path').join(__dirname, 'views-bar'));
-
 var flash    = require('connect-flash');
 app.use(flash()); // use connect-flash for flash messages stored in session
 
