@@ -1,6 +1,6 @@
 {
   "name": "basic-login-bar",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Basic Bar with Title and Login buttons, Social Media Login incl.",
   "main": "server.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "gitHead": "3225a5ca9f1afd566870f7b9bc46d0feab98f739",
   "readme": "ERROR: No README data found!",
-  "_id": "basic-login-bar@1.0.3",
-  "_shasum": "6540c1589ac0b2ed38608cf404f1a7c56e01cb73",
+  "_id": "basic-login-bar@1.0.4",
+  "_shasum": "7c2cb7d161ba09a78baf1913584c4a1115ca7d7a",
   "_from": "basic-login-bar@>=1.0.0 <2.0.0"
 }
