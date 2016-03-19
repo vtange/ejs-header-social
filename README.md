@@ -1,4 +1,4 @@
-# Basic-Login-Bar
+# basic-login-bar
 
 An EJS header template with login, signup, social media and forgot email functions
 
