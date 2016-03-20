@@ -1,5 +1,3 @@
-console.log("	APP/ACCT-MANAGE/PASSFORGET.JS");
-
 var appRoot 		= require('app-root-path');
 var User       		= require(appRoot +'/app/models/user');
 var path			= require('path');

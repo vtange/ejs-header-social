@@ -1,5 +1,3 @@
-console.log("	APP/ACCT-MANAGE/LOGINLOGOUT.JS")
-
 var path = require('path');
 
 // app/acct-manage/loginLogout.js
@@ -68,7 +66,7 @@ function loginRedundancy(req, res, next) {
        res.redirect('/');
 	else
 		return next();
-}
+};
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
@@ -78,4 +76,4 @@ function isLoggedIn(req, res, next) {
 
     // if they aren't redirect them to the home page
     res.redirect('/');
-}
+};
