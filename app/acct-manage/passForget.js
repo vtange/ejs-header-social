@@ -14,7 +14,7 @@ module.exports = function(app) {
     // FORGOT ===============================
     // =====================================
     // show the login form
-    app.get('/forgot', function(req, res) {
+    app.get('/users/forgot', function(req, res) {
 
         // render the page and pass in any flash data if it exists
         res.render(path.join(__dirname, "../../views")+'/acct-manage/forgot.ejs', { title : app.title, user : req.user, message: req.flash('info') }); 
@@ -23,7 +23,7 @@ module.exports = function(app) {
     // =====================================
     // FORGOT PASSWORD =====================
     // =====================================
-	app.post('/forgot', function(req, res, next) {
+	app.post('/users/forgot', function(req, res, next) {
 	  asyncc.waterfall([
 		function(done) {
 		  crypto.randomBytes(20, function(err, buf) {
@@ -35,7 +35,7 @@ module.exports = function(app) {
 		  User.findOne({ 'local.email' : req.body.email }, function(err, user) {
 			if (!user) {
 			  req.flash('info', 'No account with that email address exists.');
-			  return res.redirect('/forgot');
+			  return res.redirect('/users/forgot');
 			}
 
 			user.local.resetPasswordToken = token;
@@ -60,7 +60,7 @@ module.exports = function(app) {
 			subject: 'Node.js Password Reset',
 			text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
 			  'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-			  'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+			  'http://' + req.headers.host + '/users/reset/' + token + '\n\n' +
 			  'If you did not request this, please ignore this email and your password will remain unchanged.\n'
 		  };
 		  transporter.sendMail(mailOptions, function(err) {
@@ -70,10 +70,10 @@ module.exports = function(app) {
 		}
 	  ], function(err) {
 		if (err) return next(err);
-		res.redirect('/forgot');
+		res.redirect('/users/forgot');
 	  });
 	});
-	app.get('/reset/:token', function(req, res) {
+	app.get('/users/reset/:token', function(req, res) {
 	  User.findOne({ 'local.resetPasswordToken': req.params.token, 'local.resetPasswordExpires': { $gt: Date.now() } }, function(err, user) {
 		if (!user) {
 		  req.flash('error', 'Password reset token is invalid or has expired.');
@@ -88,7 +88,7 @@ module.exports = function(app) {
 	  });
 	});
 	
-	app.post('/reset/:token', function(req, res) {
+	app.post('/users/reset/:token', function(req, res) {
 	  asyncc.waterfall([
 		function(done) {
 		  User.findOne({ 'local.resetPasswordToken': req.params.token, 'local.resetPasswordExpires': { $gt: Date.now() } }, function(err, user) {

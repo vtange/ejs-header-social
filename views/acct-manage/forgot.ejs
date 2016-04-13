@@ -5,6 +5,7 @@
     <title>Polland Forgot</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="../css/index.css"> <!-- load styles -->
 </head>
 <body>
 <%- include ../partials/header.ejs %>
@@ -20,7 +21,7 @@
     <% } %>
 
     <!-- LOGIN FORM -->
-	<form class="login-area centered" action="/forgot" method="post">
+	<form class="login-area centered" action="/users/forgot" method="post">
 		<div class="form-group">
 			<label>Email</label>
 			<input type="text" class="form-control" name="email">
@@ -30,7 +31,7 @@
 	</form>
     <hr>
 
-    <p>Remembered? <a href="/login">Login back here.</a></p>
+    <p>Remembered? <a href="/users/login">Login back here.</a></p>
     <p>Or go <a href="/">home</a>.</p>
 
 </div>

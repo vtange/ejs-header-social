@@ -10,7 +10,7 @@ module.exports = function(app, passport) {
     // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect : '/profile',
+            successRedirect : '/users/profile',
             failureRedirect : '/'
     }));
 	
@@ -23,7 +23,7 @@ module.exports = function(app, passport) {
     // handle the callback after twitter has authenticated the user
     app.get('/auth/twitter/callback',
         passport.authenticate('twitter', {
-            successRedirect : '/profile',
+            successRedirect : '/users/profile',
             failureRedirect : '/'
     }));
 
@@ -38,7 +38,7 @@ module.exports = function(app, passport) {
     // the callback after google has authenticated the user
     app.get('/auth/google/callback',
             passport.authenticate('google', {
-                    successRedirect : '/profile',
+                    successRedirect : '/users/profile',
                     failureRedirect : '/'
     }));
 
@@ -51,8 +51,8 @@ module.exports = function(app, passport) {
             res.render(require('path').join(__dirname, "../../views")+'/acct-manage/connect-local.ejs', { title : app.title, user : req.user, message: req.flash('loginMessage') });
         });
         app.post('/connect/local', passport.authenticate('local-signup', {
-            successRedirect : '/profile', // redirect to the secure profile section
-            failureRedirect : '/connect/local', // redirect back to the signup page if there is an error
+            successRedirect : '/users/profile', // redirect to the secure profile section
+            failureRedirect : '/users/connect/local', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
 
@@ -64,7 +64,7 @@ module.exports = function(app, passport) {
         // handle the callback after facebook has authorized the user
         app.get('/connect/facebook/callback',
             passport.authorize('facebook', {
-                successRedirect : '/profile',
+                successRedirect : '/users/profile',
                 failureRedirect : '/'
             }));
 
@@ -76,7 +76,7 @@ module.exports = function(app, passport) {
         // handle the callback after twitter has authorized the user
         app.get('/connect/twitter/callback',
             passport.authorize('twitter', {
-                successRedirect : '/profile',
+                successRedirect : '/users/profile',
                 failureRedirect : '/'
             }));
 
@@ -89,7 +89,7 @@ module.exports = function(app, passport) {
         // the callback after google has authorized the user
         app.get('/connect/google/callback',
             passport.authorize('google', {
-                successRedirect : '/profile',
+                successRedirect : '/users/profile',
                 failureRedirect : '/'
             }));
 
@@ -108,7 +108,7 @@ module.exports = function(app, passport) {
         user.local.email    = undefined;
         user.local.password = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/users/profile');
         });
     });
 
@@ -117,7 +117,7 @@ module.exports = function(app, passport) {
         var user            = req.user;
         user.facebook.token = undefined;
         user.save(function(err) {
-            res.redirect('/profile');
+            res.redirect('/users/profile');
         });
     });
 
@@ -126,7 +126,7 @@ module.exports = function(app, passport) {
         var user           = req.user;
         user.twitter.token = undefined;
         user.save(function(err) {
-           res.redirect('/profile');
+           res.redirect('/users/profile');
         });
     });
 
@@ -135,7 +135,7 @@ module.exports = function(app, passport) {
         var user          = req.user;
         user.google.token = undefined;
         user.save(function(err) {
-           res.redirect('/profile');
+           res.redirect('/users/profile');
         });
     });
 	
