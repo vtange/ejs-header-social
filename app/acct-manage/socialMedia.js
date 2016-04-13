@@ -47,10 +47,10 @@ module.exports = function(app, passport) {
 // =============================================================================
 //use passport.authorize to connect social accounts with current user
     // locally --------------------------------
-        app.get('/connect/local', function(req, res) {
+        app.get('/users/connect/local', function(req, res) {
             res.render(require('path').join(__dirname, "../../views")+'/acct-manage/connect-local.ejs', { title : app.title, user : req.user, message: req.flash('loginMessage') });
         });
-        app.post('/connect/local', passport.authenticate('local-signup', {
+        app.post('/users/connect/local', passport.authenticate('local-signup', {
             successRedirect : '/users/profile', // redirect to the secure profile section
             failureRedirect : '/users/connect/local', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
