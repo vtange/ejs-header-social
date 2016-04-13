@@ -21,6 +21,7 @@ app.use(flash());
 
 app.set('view engine', 'ejs'); 
 app.use(express.static(__dirname + '/public'));
+app.use('/users', express.static(__dirname + '/public'));
 
 require('basic-login-bar')(app,session,passport);
  ```
@@ -29,7 +30,7 @@ require('basic-login-bar')(app,session,passport);
 <%- include ../node_modules/basic-login-bar/views/partials/header.ejs %>
  ```
  
- The .ejs partial for the header requires a 'title' property inputed from your server route. This autogenerates the title shown on the header. For example:
+ The .ejs partial for the header requires a 'title' property inputed from all your server routes. This autogenerates the title shown on the header. For example:
  
  ```
  		res.render('index.ejs', {
