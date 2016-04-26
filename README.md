@@ -1,4 +1,4 @@
-# basic-login-bar
+# ejs-header-social
 
 An EJS header template with login, signup, social media and forgot email functions
 

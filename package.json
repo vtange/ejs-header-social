@@ -1,6 +1,6 @@
 {
-  "name": "basic-login-bar",
-  "version": "1.1.5",
+  "name": "ejs-header-social",
+  "version": "1.1.6",
   "description": "ejs barebones header, social-media-login addon",
   "main": "server.js",
   "scripts": {
